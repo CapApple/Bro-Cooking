@@ -13,6 +13,7 @@ module.exports = function (sequelize, DataTypes) {
     },
     minutes: DataTypes.INTEGER,
     // counting users' favorite times 
+    procedure: DataTypes.STRING,
     favorites: {
       type: DataTypes.INTEGER,
       defaultValue: 0
