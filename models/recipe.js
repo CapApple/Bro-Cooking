@@ -18,8 +18,8 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false,
     },
     minutes: DataTypes.INTEGER,
-    // counting users' favorite times 
     process: DataTypes.STRING,
+    // counting users' favorite times 
     favorites: {
       type: DataTypes.INTEGER,
       defaultValue: 0
