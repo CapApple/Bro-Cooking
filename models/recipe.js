@@ -1,5 +1,11 @@
 module.exports = function (sequelize, DataTypes) {
   var Recipe = sequelize.define("Recipe", {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true
+    },   
     name: {
       type: DataTypes.STRING,
       allowNull: false, 
@@ -12,8 +18,8 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false,
     },
     minutes: DataTypes.INTEGER,
+    process: DataTypes.STRING,
     // counting users' favorite times 
-    procedure: DataTypes.STRING,
     favorites: {
       type: DataTypes.INTEGER,
       defaultValue: 0

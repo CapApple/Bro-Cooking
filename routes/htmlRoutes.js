@@ -1,21 +1,22 @@
 var db = require("../models");
-
+var Sequelize = require("sequelize");
 module.exports = function(app) {
   // Load index page
+  // find recipes with more than 5 favorites
   app.get("/", function(req, res) {
-    db.Recipe.findAll({}).then(function(dbExamples) {
+    db.Recipe.findAll({where: {favorites: {[Sequelize.Op.gte]: 5}}}).then(function(dbResults) {
       res.render("index", {
         msg: "Welcome!",
-        examples: dbExamples
+        examples: dbResults
       });
     });
   });
 
   // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("example", {
-        example: dbExample
+  app.get("/recipe/:id", function(req, res) {
+    db.Recipe.findOne({ where: { id: req.params.id } }).then(function(dbResults) {
+      res.render("singleRecipe", {
+        example: dbResults
       });
     });
   });
