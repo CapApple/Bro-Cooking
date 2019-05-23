@@ -28,11 +28,11 @@
               <span class="label">Time Required:</span>
               <span class="time">{{this.minutes}}</span>
               <span class="label">Ingredients:</span>
-              <span class="time">{{this.ingredients}}</span>
+              <span class="ingredients">{{this.ingredients}}</span>
               <span class="label">Favorited by:</span>
-              <span class="time">{{this.favorites}}</span>
+              <span class="fav">{{this.favorites}}</span>          
             </p>
-            <a href="example/{{this.id}}">{{this.text}}</a>
+            {{!-- <a href="example/{{this.id}}">{{this.text}}</a> --}}
             {{!-- <button class="btn btn-danger float-right delete">ｘ</button> --}}
             {{!-- “Let's cook" Button --}}
             <a href="recipe/{{this.id}}"><button class="detail">Let's cook!</button></a>
