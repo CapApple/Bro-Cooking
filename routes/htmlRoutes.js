@@ -1,12 +1,16 @@
 var db = require("../models");
 var Sequelize = require("sequelize");
+var path = require("path");
 module.exports = function(app) {
   // Load index page
-  // find recipes with more than 5 favorites
-  app.get("/", function(req, res) {
+  app.get("/", function(req, res){
+    res.sendFile(path.join(__dirname, "../public/indedex.html"));
+  });
+  // load recipes with more than 5 favorites
+  app.get("/favorites", function(req, res) {
     db.Recipe.findAll({where: {favorites: {[Sequelize.Op.gte]: 5}}}).then(function(dbResults) {
-      res.render("index", {
-        msg: "Welcome!",
+      res.render("favorites", {
+        // msg: "These recipes are hot!",
         examples: dbResults
       });
     });
