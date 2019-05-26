@@ -1,15 +1,18 @@
 // when document is ready, load content to the favorite circles.
-$(document).on("ready", function(){
+$(document).ready(function () {
     console.log("document ready");
-    for(var i=1; i<5; i++){
-        $("#number-"+i).text(i);
-    }
-    $.get("/api/recipes", function(response){
-        alert("test");
+    // for(var i=1; i<5; i++){
+    //     $("#number-"+i).text(i);
+    // }
+    $.get("/api/recipes", function (response) {
         console.log(response);
-        for(var i=1; i<5; i++){
-            $("#number-"+i).text(response[i-1].favorites);
+        console.log(response[0].favorites);
+        // update favorites numbers and names
+        for (var i = 1; i < 5; i++) {
+            $("#number-" + i).text(response[i-1].favorites);
+            $("#text-"+i).text(response[i-1].name);
         }
+
     });
 });
 

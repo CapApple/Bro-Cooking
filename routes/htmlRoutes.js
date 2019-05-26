@@ -8,7 +8,10 @@ module.exports = function(app) {
   });
   // load recipes with more than 5 favorites
   app.get("/favorites", function(req, res) {
-    db.Recipe.findAll({where: {favorites: {[Sequelize.Op.gte]: 5}}}).then(function(dbResults) {
+    db.Recipe.findAll({
+      where: {favorites: {[Sequelize.Op.gte]: 5}},
+      order: [['favorites', 'DESC']]
+    }).then(function(dbResults) {
       res.render("favorites", {
         // msg: "These recipes are hot!",
         examples: dbResults
