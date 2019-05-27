@@ -78,7 +78,9 @@ a {
   background-color: #fff;
   color: #1b1464;
 }
-
+.btn-primary{
+  float:right;
+  }
 section {
   padding: 85px 0;
 }

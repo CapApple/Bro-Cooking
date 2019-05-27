@@ -1,0 +1,36 @@
+{
+  "name": "bro-cooking",
+  "version": "1.0.0",
+  "description": "everyday cooking project",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CapApple/Bro-Cooking.git"
+  },
+  "author": "Joe,Luis,Charles,Jeremy,Oscar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CapApple/Bro-Cooking/issues"
+  },
+  "homepage": "https://github.com/CapApple/Bro-Cooking#readme",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.3.1",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.0",
+    "express-handlebars": "^3.1.0",
+    "express-session": "^1.16.1",
+    "mysql2": "^1.6.5",
+    "nodemon": "^1.19.0",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "sequelize": "^5.8.6"
+  }
+}
