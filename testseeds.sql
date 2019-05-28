@@ -7,5 +7,5 @@ VALUES ("Shrimp Cake", 40, 1000, 3, 6, "https://www.tasteofhome.com/wp-content/u
 INSERT INTO recipes (name, minutes, calory, serves, favorites, image, process, createdAt, updatedAt)
 VALUES ("Salmon Bowl", 15, 700, 2, 8, "https://www.tasteofhome.com/wp-content/uploads/2018/04/Shrimp-Cakes-with-Spicy-Aioli-Sauce_EXPS_THCA18_125452_C01_24_4b-2-696x696.jpg", "https://natashaskitchen.com/shrimp-cakes-recipe-video/", '2019-01-01 00:00:00', '2019-01-01 00:00:00');
 
-INSERT INTO recipes (name, ingredients, minutes, process, favorites, createdAt, updatedAt)
-VALUES ("Garlic Chicken", "chicken, garlic, flower, vegetable oil", 20, "blahblahbla", 3, '2019-01-01 00:00:00', '2019-01-01 00:00:00');
+INSERT INTO recipes (name, minutes, calory, serves, favorites, image, process, createdAt, updatedAt)
+VALUES ("Beef Bowl", 18, 800, 2, 10, "https://www.tasteofhome.com/wp-content/uploads/2018/04/Shrimp-Cakes-with-Spicy-Aioli-Sauce_EXPS_THCA18_125452_C01_24_4b-2-696x696.jpg", "https://natashaskitchen.com/shrimp-cakes-recipe-video/", '2019-01-01 00:00:00', '2019-01-01 00:00:00');
