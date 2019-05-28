@@ -14,6 +14,7 @@ $(document).ready(function () {
         for (var i = 1; i < 5; i++) {
             $("#number-" + i).text(response[i-1].favorites);
             $("#text-"+i).text(response[i-1].name);
+            console.log(response[i-1].favorites);
         }
 
     });
