@@ -3,9 +3,9 @@ var passport = require("../config/passport");
 
 
 module.exports = function(app) {
-  // Get all examples
+  // Get all recipes in our database and sort by favorite times
   app.get("/api/recipes", function(req, res) {
-    db.Recipe.findAll({}).then(function(dbExamples) {
+    db.Recipe.findAll({order:[['favorites', 'DESC']]}).then(function(dbExamples) {
       res.json(dbExamples);
     });
   });

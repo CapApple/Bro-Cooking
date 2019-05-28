@@ -8,19 +8,33 @@
   <meta content="" name="keywords">
   <meta content="" name="description">
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
+  <!-- Facebook Opengraph integration: https://developers.facebook.com/docs/sharing/opengraph -->
+  <meta property="og:title" content="">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="">
+  <meta property="og:site_name" content="">
+  <meta property="og:description" content="">
 
+  <!-- Twitter Cards integration: https://dev.twitter.com/cards/  -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="">
+  <meta name="twitter:title" content="">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="">
 
+  <!-- Favicon -->
+  <link href="img/favicon.png" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700|Roboto:400,900" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
 
   <!-- =======================================================
@@ -52,7 +66,7 @@
         <p class="tagline">
           Turning untrained cooks into world-renowned chefs with easy-to-follow recipes since 2019.
         </p>
-        <a class="btn btn-full" href="#about">Let's Start Cooking</a>
+        <a class="btn btn-full" href="#searchArea">Let's Start Cooking</a>
       </div>
     </div>
 
@@ -71,17 +85,12 @@
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li><a href="#about">Find a Recipe</a></li>
+          <li><a href="#searchArea">Find a Recipe</a></li>
           <li><a href="#features">Most Popular</a></li>
           <li><a href="#portfolio">Chef Favorites</a></li>
           <li><a href="#team">Meet the Chefs</a></li>
+          <li><a href="#contact">Create Account</a></li>
         </ul>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal">
-          Sign Up
-        </button>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#logInOutModal">
-          Login/Logout
-        </button>
       </nav>
       <!-- #nav-menu-container -->
 
@@ -93,26 +102,29 @@
   </header>
   <!-- #header -->
 
-  <!-- About -->
+  <!-- Search -->
 
-  <section class="about" id="about">
+  <section class="searchArea" id="searchArea">
     <div class="container text-center">
       <h2>
         What's on the menu for tonight?
       </h2>
-
       <form id="form">
         <input type="text" class="form-control" id="input">
       </form>
       <br><br>
-      <p><input class="btn btn-default" id="recipe" type="submit" value="SEARCH"></p>
-
-
-
-
+      <p><input class="btn btn-default" id="search" type="submit" value="SEARCH"></p>
     </div>
+
+    <!-- search results -->
+    <div class="container">
+      <div class="row" id="searchResults">
+
+      </div>
+    </div>
+
   </section>
-  <!-- /About -->
+  <!-- /Search -->
   <!-- Parallax -->
 
   <div class="block bg-primary block-pd-lg block-bg-overlay text-center" data-bg-img="img/parallax-bg.jpg"
@@ -132,35 +144,37 @@
   <section class="features" id="features">
     <div class="container text-center">
       <h2>
-        Today's most popular meal searches
+        <!-- Today's most popular meal searches  -->
+        Mostly liked recipes
       </h2>
 
 
       <div class="row stats-row">
         <div class="stats-col text-center col-md-3 col-sm-6">
           <div class="circle">
-            <span class="stats-no" data-toggle="counter-up">250</span> Chicken Wings
+            <span class="stats-no" id="number-1" data-toggle="counter-up"></span> <span id="text-1"></span>
           </div>
         </div>
 
         <div class="stats-col text-center col-md-3 col-sm-6">
           <div class="circle">
-            <span class="stats-no" data-toggle="counter-up">179</span> Kid's Desserts
+            <span class="stats-no" id="number-2" data-toggle="counter-up"></span> <span id="text-2"></span>
           </div>
         </div>
 
         <div class="stats-col text-center col-md-3 col-sm-6">
           <div class="circle">
-            <span class="stats-no" data-toggle="counter-up">1,463</span> Pizza
+            <span class="stats-no" id="number-3" data-toggle="counter-up"></span> <span id="text-3"></span>
           </div>
         </div>
 
         <div class="stats-col text-center col-md-3 col-sm-6">
           <div class="circle">
-            <span class="stats-no" data-toggle="counter-up">415</span> 30-Minutes Meals
+            <span class="stats-no" id="number-4" data-toggle="counter-up"></span> <span id="text-4"></span>
           </div>
         </div>
       </div>
+      <div><a href="/favorites" target="_blank"><button>See More</button></a></div>
     </div>
   </section>
   <!-- /Favorites -->
@@ -175,13 +189,13 @@
           </h2>
 
           <p>
-            Create an username and password to sign-in and save all of your favorite recipes, chat with other chefs, and
-            so much more!
+            Create an username and password to sign-in and save all of your favorite recipes, chat with other chefs,
+            and so much more!
           </p>
         </div>
 
         <div class="col-lg-3 col-sm-12 text-lg-right text-center">
-          <a class="btn btn-primary" data-toggle="modal" data-target="#signUpModal">Create Account</a>
+          <a class="btn btn-ghost" href="#contact">Create Account</a>
         </div>
       </div>
     </div>
@@ -204,8 +218,7 @@
       <div class="row">
         <div class="col-lg-3 col-sm-6 col-xs-12">
           <div class="card card-block">
-            <a target="_blank"
-              href="https://www.edamam.com/recipe/bacon-wrapped-chicken-wings-c39ef53190dbd42965d3f9cc888b283d/chicken+wings"><img
+            <a target="_blank" href="https://www.edamam.com/recipe/bacon-wrapped-chicken-wings-c39ef53190dbd42965d3f9cc888b283d/chicken+wings"><img
                 alt="" src="img/bacon.jpg">
               <div class="portfolio-over">
                 <div>
@@ -222,9 +235,8 @@
 
         <div class="col-lg-3 col-sm-6 col-xs-12">
           <div class="card card-block">
-            <a target="_blank"
-              href="https://www.edamam.com/recipe/breakfast-pizza-3b53c9a0508d5f707a0dfd525f1e4412/pizza"><img alt=""
-                src="img/pizza.jpg">
+            <a target="_blank" href="https://www.edamam.com/recipe/breakfast-pizza-3b53c9a0508d5f707a0dfd525f1e4412/pizza"><img
+                alt="" src="img/pizza.jpg">
               <div class="portfolio-over">
                 <div>
                   <h3 class="card-title">
@@ -240,8 +252,7 @@
 
         <div class="col-lg-3 col-sm-6 col-xs-12">
           <div class="card card-block">
-            <a target="_blank"
-              href="https://www.edamam.com/recipe/macaroni-cheese-for-a-crowd-8bcf21e987c2d30f50e06f84d85c08a0/macaroni+and+cheese"><img
+            <a target="_blank" href="https://www.edamam.com/recipe/macaroni-cheese-for-a-crowd-8bcf21e987c2d30f50e06f84d85c08a0/macaroni+and+cheese"><img
                 alt="" src="img/mac.jpg">
               <div class="portfolio-over">
                 <div>
@@ -258,8 +269,7 @@
 
         <div class="col-lg-3 col-sm-6 col-xs-12">
           <div class="card card-block">
-            <a target="_blank"
-              href="https://www.edamam.com/recipe/cheddar-and-blue-hamburger-a028745a95726dbbef0df24165960b9e/hamburger"><img
+            <a target="_blank" href="https://www.edamam.com/recipe/cheddar-and-blue-hamburger-a028745a95726dbbef0df24165960b9e/hamburger"><img
                 alt="" src="img/hamburger.jpg">
               <div class="portfolio-over">
                 <div>
@@ -278,9 +288,8 @@
       <div class="row">
         <div class="col-lg-3 col-sm-6 col-xs-12">
           <div class="card card-block">
-            <a target="_blank"
-              href="https://www.edamam.com/recipe/cookies-milk-pie-341495bd513d3e750e4f747a27cfc5b6/cookies"><img alt=""
-                src="img/pie.jpg">
+            <a target="_blank" href="https://www.edamam.com/recipe/cookies-milk-pie-341495bd513d3e750e4f747a27cfc5b6/cookies"><img
+                alt="" src="img/pie.jpg">
               <div class="portfolio-over">
                 <div>
                   <h3 class="card-title">
@@ -296,8 +305,7 @@
 
         <div class="col-lg-3 col-sm-6 col-xs-12">
           <div class="card card-block">
-            <a target="_blank"
-              href="https://www.edamam.com/recipe/asian-chicken-salad-f3b2f42d032b99819129a385fea93fb1/asian+chicken"><img
+            <a target="_blank" href="https://www.edamam.com/recipe/asian-chicken-salad-f3b2f42d032b99819129a385fea93fb1/asian+chicken"><img
                 alt="" src="img/salad.jpg">
               <div class="portfolio-over">
                 <div>
@@ -314,9 +322,8 @@
 
         <div class="col-lg-3 col-sm-6 col-xs-12">
           <div class="card card-block">
-            <a target="_blank"
-              href="https://www.edamam.com/recipe/baby-back-ribs-1a4f8ce18d339f286bad2bf5ec873846/ribs"><img alt=""
-                src="img/ribs.jpg">
+            <a target="_blank" href="https://www.edamam.com/recipe/baby-back-ribs-1a4f8ce18d339f286bad2bf5ec873846/ribs"><img
+                alt="" src="img/ribs.jpg">
               <div class="portfolio-over">
                 <div>
                   <h3 class="card-title">
@@ -332,9 +339,8 @@
 
         <div class="col-lg-3 col-sm-6 col-xs-12">
           <div class="card card-block">
-            <a target="_blank"
-              href="https://www.edamam.com/recipe/eggs-benedict-bcf76c93c5b9dd6107681866c43ed98a/eggs"><img alt=""
-                src="img/eggs.jpg">
+            <a target="_blank" href="https://www.edamam.com/recipe/eggs-benedict-bcf76c93c5b9dd6107681866c43ed98a/eggs"><img
+                alt="" src="img/eggs.jpg">
               <div class="portfolio-over">
                 <div>
                   <h3 class="card-title">
@@ -352,77 +358,7 @@
   </section>
   <!-- /Portfolio -->
   <!-- Team -->
-  <!-- Button trigger modal -->
 
-
-  <!-- Modal Log In/Out-->
-  <div class="modal fade" id="logInOutModal" tabindex="-1" role="dialog" aria-labelledby="logInOutModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="logInOutModalLabel">Log In/Out</h5>
-          <section id="contact">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-12 text-center">
-                </div>
-              </div>
-              <form class="login">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Email/Username</label>
-                  <input type="email" class="form-control" id="email-input" placeholder="Email">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="password-input" placeholder="Password">
-                </div>
-                <button id="logInSubmit" class="btn btn-login">Login</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              </form>
-            </div>
-        </div>
-      </div>
-      <div class="modal-body">
-      </div>
-    </div>
-  </div>
-  </div>
-  </div>
-  </section>
-  <!-- Modal SignUp -->
-  <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="signUpModalLabel">Sign Up</h5>
-          <section id="contact">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-12 text-center">
-                </div>
-              </div>
-              <form class="signup">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Email/Username</label>
-                  <input type="email" class="form-control" id="email-input1" placeholder="Email">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="password-input1" placeholder="Password">
-                </div>
-                <button id="signUpsubmit" class="btn btn-signUp">Sign Up</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              </form>
-            </div>
-          </section>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!--Team Chef-->
   <section class="team" id="team">
     <div class="container">
       <h2 class="text-center">
@@ -443,8 +379,8 @@
                 </h4>
 
                 <nav class="social-nav">
-                  <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a
-                    href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-envelope"></i></a>
+                  <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
+                      class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-envelope"></i></a>
                 </nav>
 
                 <p>
@@ -469,8 +405,8 @@
                 </h4>
 
                 <nav class="social-nav">
-                  <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a
-                    href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-envelope"></i></a>
+                  <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
+                      class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-envelope"></i></a>
                 </nav>
 
                 <p>
@@ -495,8 +431,8 @@
                 </h4>
 
                 <nav class="social-nav">
-                  <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a
-                    href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-envelope"></i></a>
+                  <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
+                      class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-envelope"></i></a>
                 </nav>
 
                 <p>
@@ -520,8 +456,8 @@
                 </h4>
 
                 <nav class="social-nav">
-                  <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a
-                    href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-envelope"></i></a>
+                  <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
+                      class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-envelope"></i></a>
                 </nav>
 
                 <p>
@@ -545,8 +481,8 @@
                 </h4>
 
                 <nav class="social-nav">
-                  <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a
-                    href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-envelope"></i></a>
+                  <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
+                      class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-envelope"></i></a>
                 </nav>
 
                 <p>
@@ -571,8 +507,8 @@
                 </h4>
 
                 <nav class="social-nav">
-                  <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a
-                    href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-envelope"></i></a>
+                  <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
+                      class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-envelope"></i></a>
                 </nav>
 
                 <p>
@@ -582,14 +518,48 @@
             </a>
           </div>
         </div>
-
       </div>
     </div>
   </section>
   <!-- /Team -->
   <!-- @component: footer -->
 
+  <section id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h2 class="section-title">Create Account</h2>
+        </div>
+      </div>
 
+      <div class="form">
+        <div id="sendmessage">Your message has been sent. Thank you!</div>
+        <div id="errormessage"></div>
+        <form action="" method="post" role="form" class="contactForm">
+          <div class="form-group">
+            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4"
+              data-msg="Please enter at least 4 chars" />
+            <div class="validation"></div>
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" name="email" id="email" placeholder="Username" data-rule="email"
+              data-msg="Please enter a valid email" />
+            <div class="validation"></div>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" name="subject" id="subject" placeholder="Password" data-rule="minlen:4"
+              data-msg="Please enter at least 8 chars of subject" />
+            <div class="validation"></div>
+          </div>
+
+          <div class="text-center"><button type="submit">Sign Me Up!</button></div>
+        </form>
+      </div>
+    </div>
+
+    </div>
+    </div>
+  </section>
 
   <footer class="site-footer">
     <div class="bottom">
@@ -610,7 +580,7 @@
               </li>
 
               <li class="list-inline-item">
-                <a href="#about">Find a Recipe</a>
+                <a href="#searchArea">Find a Recipe</a>
               </li>
 
               <li class="list-inline-item">
@@ -638,14 +608,7 @@
   <a class="scrolltop" href="#"><span class="fa fa-angle-up"></span></a>
 
 
-  <!-- Template Specisifc Custom Javascript File -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  
-  <script type="text/javascript" src="js/login.js"></script>
-  <script type="text/javascript" src="js/signup.js"></script>
-  <script type="text/javascript" src="js/members.js"></script>
-
-  Required JavaScript Libraries 
+  <!-- Required JavaScript Libraries -->
   <script src="lib/jquery/jquery.min.js"></script>
   <script src="lib/jquery/jquery-migrate.min.js"></script>
   <script src="lib/superfish/hoverIntent.js"></script>
@@ -660,11 +623,12 @@
   <script src="lib/parallax/parallax.js"></script>
   <script src="lib/lockfixed/lockfixed.min.js"></script>
 
-
-
-
- <!-- <script src="contactform/contactform.js"></script> -->
-
+  <!-- Template Specisifc Custom Javascript File -->
+  <script src="js/custom.js"></script>
+  <script src="contactform/contactform.js"></script>
+  <!-- js file for loading content -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="js/main.js"></script>
 </body>
 
 </html>

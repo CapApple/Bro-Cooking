@@ -15,7 +15,20 @@ module.exports = function (sequelize, DataTypes) {
     },
     ingredients: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
+      defaultValue: ""
+    },
+    calory: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    serves: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    }, 
+    image: {
+      type: DataTypes.STRING,
+      allowNull: true
     },
     minutes: DataTypes.INTEGER,
     process: DataTypes.STRING,

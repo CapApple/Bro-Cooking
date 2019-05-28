@@ -1,8 +1,22 @@
 var db = require("../models");
+var Sequelize = require("sequelize");
 var path = require("path");
 var isAuthenticated = require("../config/middleware/isAuthenticated");
+module.exports = function(app) {
+  // Load index page
+  // load recipes with more than 5 favorites
+  app.get("/favorites", function(req, res) {
+    db.Recipe.findAll({
+      where: {favorites: {[Sequelize.Op.gte]: 5}},
+      order: [['favorites', 'DESC']]
+    }).then(function(dbResults) {
+      res.render("favorites", {
+        // msg: "These recipes are hot!",
+        examples: dbResults
+      });
+    });
+  });
 
-module.exports = function (app) {
 
   app.get("/", function (req, res) {
     // If the user already has an account send them to the members page
