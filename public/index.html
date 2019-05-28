@@ -89,15 +89,17 @@
           <li><a href="#features">Most Popular</a></li>
           <li><a href="#portfolio">Chef Favorites</a></li>
           <li><a href="#team">Meet the Chefs</a></li>
-          <li><a href="#contact">Create Account</a></li>
         </ul>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signUpModal">
+          Sign Up
+        </button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#logInOutModal">
+          Login/Logout
+        </button>
       </nav>
       <!-- #nav-menu-container -->
 
-      <nav class="nav social-nav pull-right d-none d-lg-inline">
-        <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
-            class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-envelope"></i></a>
-      </nav>
+
     </div>
   </header>
   <!-- #header -->
@@ -195,7 +197,7 @@
         </div>
 
         <div class="col-lg-3 col-sm-12 text-lg-right text-center">
-          <a class="btn btn-ghost" href="#contact">Create Account</a>
+          <a class="btn btn-primary" data-toggle="modal" data-target="#signUpModal">Create Account</a>
         </div>
       </div>
     </div>
@@ -356,6 +358,72 @@
       </div>
     </div>
   </section>
+  <!-- Modal Log In/Out-->
+  <div class="modal fade" id="logInOutModal" tabindex="-1" role="dialog" aria-labelledby="logInOutModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="logInOutModalLabel">Log In/Out</h5>
+          <section id="contact">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12 text-center">
+                </div>
+              </div>
+              <form class="login">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email/Username</label>
+                  <input type="email" class="form-control" id="email-input" placeholder="Email">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="password-input" placeholder="Password">
+                </div>
+                <button id="logInSubmit" class="btn btn-login">Login</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </form>
+            </div>
+        </div>
+      </div>
+      <div class="modal-body">
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  </section>
+  <!-- Modal SignUp -->
+  <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="signUpModalLabel">Sign Up</h5>
+          <section id="contact">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12 text-center">
+                </div>
+              </div>
+              <form class="signup">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email/Username</label>
+                  <input type="email" class="form-control" id="email-input1" placeholder="Email">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="password-input1" placeholder="Password">
+                </div>
+                <button id="signUpsubmit" class="btn btn-signUp">Sign Up</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </form>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- /Portfolio -->
   <!-- Team -->
 
@@ -524,42 +592,6 @@
   <!-- /Team -->
   <!-- @component: footer -->
 
-  <section id="contact">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <h2 class="section-title">Create Account</h2>
-        </div>
-      </div>
-
-      <div class="form">
-        <div id="sendmessage">Your message has been sent. Thank you!</div>
-        <div id="errormessage"></div>
-        <form action="" method="post" role="form" class="contactForm">
-          <div class="form-group">
-            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4"
-              data-msg="Please enter at least 4 chars" />
-            <div class="validation"></div>
-          </div>
-          <div class="form-group">
-            <input type="email" class="form-control" name="email" id="email" placeholder="Username" data-rule="email"
-              data-msg="Please enter a valid email" />
-            <div class="validation"></div>
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control" name="subject" id="subject" placeholder="Password" data-rule="minlen:4"
-              data-msg="Please enter at least 8 chars of subject" />
-            <div class="validation"></div>
-          </div>
-
-          <div class="text-center"><button type="submit">Sign Me Up!</button></div>
-        </form>
-      </div>
-    </div>
-
-    </div>
-    </div>
-  </section>
 
   <footer class="site-footer">
     <div class="bottom">
@@ -607,6 +639,10 @@
   </footer>
   <a class="scrolltop" href="#"><span class="fa fa-angle-up"></span></a>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/login.js"></script>
+  <script type="text/javascript" src="js/signup.js"></script>
+  <script type="text/javascript" src="js/members.js"></script>
 
   <!-- Required JavaScript Libraries -->
   <script src="lib/jquery/jquery.min.js"></script>
