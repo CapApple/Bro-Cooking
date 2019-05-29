@@ -29,13 +29,7 @@ $("#search").on("click", function(){
     localStorage.setItem("menuItem", menu);
     $("#input").val("");
 });
-// on page load, display the search results from last time
-menu = localStorage.getItem("nemuItem");
-if(menu != ""){
-    console.log(menu);
-    recipeGet();
-    display();
-}
+
 
 // function for getting recipe info from Edmame API
 function recipeGet(){
@@ -93,7 +87,7 @@ function display(){
         var newText = $("<p>", {"class": "card-text"}).html("Calories: " + caloryPool[i]);
         var newLink = $("<a>").text(sourcePool[i]);
         newLink.attr("href", linkPool[i]);
-        newLink.attr("class", "btn btn-primary");
+        newLink.attr("class", "btn btn-default");
         newBody.append(newTitle);
         newBody.append(newText);
         newBody.append(newLink);
@@ -107,4 +101,16 @@ function display(){
         favButton.attr("data-recipeId", i);
         newTitle.append(favButton);
     }
+}
+
+
+
+
+
+// on page load, display the search results from last time
+menu = localStorage.getItem("nemuItem");
+if(menu != ""){
+    console.log(menu);
+    recipeGet();
+    display();
 }
