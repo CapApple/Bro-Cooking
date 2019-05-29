@@ -1,0 +1,80 @@
+.favorite-list{
+    margin-bottom: 10px;
+    border-color: #fe6505;
+}
+
+h3{
+    color: #1b1464;
+    text-align: center;
+    font-family: "Raleway", Helvetica, Arial, sans-serif;
+}
+
+.list-picture{
+    height: 150px;
+}
+
+button{
+    border-radius: 5px;
+    color: aliceblue;
+    transition: background-color 0.5s;
+}
+
+.detail{
+    background-color: #1b1464;
+}
+
+.like{
+    background-color: #fe6505;
+}
+
+button:hover{
+    cursor: pointer;
+    box-shadow: 1px 1px rgb(100,100,100);
+}
+
+.detail:hover{
+    background-color: #64608f;
+}
+
+.like:hover{
+    background-color: #f3a372;
+}
+
+.list-left{
+    float: left;
+    margin-right: 20px;
+}
+
+.name{
+    font-family: "Raleway", Helvetica, Arial, sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.right-top{
+    /* background-color: #f3a372; */
+    border-bottom: #1b1464;
+}
+
+.liked-by{
+    /* margin-bottom: 15px; */
+    display: inline-block;
+    float: right;
+    /* background-color: #64608f; */
+}
+
+.label{
+    font-style: italic;
+}
+
+.fav{
+    font-family: "Raleway", Helvetica, Arial, sans-serif;
+    font-size: 1.5em;
+    padding: 5px;
+}
+
+.recipe-info{
+    /* display: inline-block; */
+}

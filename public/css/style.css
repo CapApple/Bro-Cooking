@@ -177,6 +177,7 @@ a:hover {
 #header {
   background: #1b1464;
   height: 105px;
+  padding-top: 20px;
 }
 
 #header #logo {
@@ -490,7 +491,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .block {
   color: #fff;
-  height: 490px;
+  height: 250px;
   overflow: hidden;
   padding-top: 85px;
 }
@@ -1021,4 +1022,9 @@ body.mobile-nav-active #mobile-nav-toggle {
   .site-footer .list-inline li {
     display: inline-block;
   }
+}
+
+/* style for search results */
+.fav{
+  float: right;
 }
