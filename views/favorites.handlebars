@@ -1,11 +1,10 @@
 <div id="home">
   <div class="container">
     <div class="row">
-      <div class="col-8 offset-2">
+      <div class="col-10 offset-1">
         <h1>{{msg}}</h1>
-        <h2>Find your food desire here!</h2>
-        <br>
-        
+        {{!-- <h2>Find your food desire here!</h2> --}}
+
         {{!-- <form class="clearfix mb-4" action="POST">
           <div class="form-group">
             <label for="example-text">Example Text</label>
@@ -19,23 +18,45 @@
         </form> --}}
 
         <h3>See what's hot right now:</h3>
+        <br>
         <ul id="example-list" class="list-group">
           {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <p>
-              <span class="label">Name:</span>
-              <span class="name">{{this.name}}</span>
-              <span class="label">Time Required:</span>
-              <span class="time">{{this.minutes}}</span>
-              <span class="label">Ingredients:</span>
-              <span class="ingredients">{{this.ingredients}}</span>
-              <span class="label">Favorited by:</span>
-              <span class="fav">{{this.favorites}}</span>          
-            </p>
+          <li data-id="{{this.id}}" class="list-group-item favorite-list">
+            <div class="list-left">
+              <img src="{{this.image}}" alt="food picture" class="list-picture">
+            </div>
+            <div class="list-right">
+              {{!-- <span class="label-name">Name:</span> --}}
+              <div class="right-top">
+                <div class="name">{{this.name}}</div>
+                <div class="liked-by">
+                  <span class="label">Liked by:</span>
+                  <span class="fav number">{{this.favorites}}</span>
+                </div>
+              </div>
+
+              <div class="right-mid">
+                <div class="recipe-info">
+                  <span class="label">Calories:</span>
+                  <span class="number">{{this.calory}}</span>
+                </div>
+                <div class="recipe-info">
+                  <span class="label">Time Required:</span>
+                  <span class="time">{{this.minutes}}</span>
+                </div>
+                <div class="recipe-info">
+                  <span class="label">Serves:</span>
+                  <span class="number">{{this.serves}}</span>
+                </div>
+              </div>
+              {{!-- <span class="label">Ingredients:</span> --}}
+              {{!-- <span class="ingredients">{{this.ingredients}}</span> --}}
+              <a href="{{this.process}}"><button class="detail">Let's cook!</button></a>
+              <button data-recipeid="{{this.id}}" class="like">Like it <i class="far fa-star"></i></button>
+            </div>
             {{!-- <a href="example/{{this.id}}">{{this.text}}</a> --}}
             {{!-- <button class="btn btn-danger float-right delete">ｘ</button> --}}
             {{!-- “Let's cook" Button --}}
-            <a href="recipe/{{this.id}}"><button class="detail">Let's cook!</button></a>
           </li>
           {{/each}}
         </ul>
@@ -48,4 +69,6 @@
 
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
+<script src="/js/singleRecipe.js"></script>
+{{!--
+<script src="/js/index.js"></script> --}}

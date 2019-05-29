@@ -18,7 +18,7 @@ $(document).ready(function () {
         }
 
     });
-});
+}); 
 
 // search function
 $("#search").on("click", function(){
