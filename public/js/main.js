@@ -108,7 +108,7 @@ function display(){
 
 
 // on page load, display the search results from last time
-menu = localStorage.getItem("nemuItem");
+menu = localStorage.getItem("menuItem");
 if(menu != ""){
     console.log(menu);
     recipeGet();
